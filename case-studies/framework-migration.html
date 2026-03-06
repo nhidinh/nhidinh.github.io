@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-<title>Automation Framework Migration Lessons</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>When an Automation Framework Migration Goes Wrong</title>
 
 <style>
 body{
-font-family:Arial;
+font-family:system-ui,Arial;
 max-width:900px;
 margin:auto;
 padding:40px;
 line-height:1.6;
+}
+
+a{
+color:#0366d6;
+text-decoration:none;
+}
+
+.back{
+margin-bottom:30px;
+display:inline-block;
 }
 </style>
 
@@ -18,102 +32,46 @@ line-height:1.6;
 
 <body>
 
+<a class="back" href="../index.html">← Back</a>
+
 <h1>When an Automation Framework Migration Goes Wrong</h1>
 
 <p>
-In large automation systems, framework migrations are often driven by
-technology trends or the desire to modernize the stack. However, the
-success of such migrations depends more on architecture and maintainability
-than on the programming language itself.
+Automation framework migrations are often driven by technology trends.
+However, in large systems, architecture and maintainability matter far more than language choice.
 </p>
 
 <h2>Context</h2>
 
 <p>
-The system used a mature automation framework built with C#, Selenium,
-and NUnit. This framework had been maintained for over a decade and
-supported large regression suites.
-</p>
-
-<p>
-At one point, the team initiated a migration to a Java-based Selenium
-framework in order to align with open-source ecosystems and industry
-trends.
+The system used a mature C# + Selenium + NUnit framework that had been maintained for many years.
+A migration toward a Java-based Selenium framework was initiated to align with industry trends.
 </p>
 
 <h2>The Problem</h2>
 
-<p>
-While the migration looked promising initially, the new framework
-introduced several challenges:
-</p>
-
 <ul>
-
-<li>Architecture was less mature than the legacy framework.</li>
-
+<li>The new framework architecture was less mature.</li>
 <li>Automation stability decreased.</li>
-
 <li>Maintenance complexity increased.</li>
-
-<li>Key automation engineers left the project.</li>
-
+<li>Two frameworks had to be maintained in parallel.</li>
 </ul>
-
-<p>
-Eventually the automation ecosystem became difficult to sustain,
-as two frameworks had to be maintained in parallel.
-</p>
 
 <h2>The Decision</h2>
 
 <p>
 After evaluating long-term stability and maintenance cost,
-we decided to consolidate the automation ecosystem back to the
-mature C# framework.
+the automation platform was consolidated back to the mature C# framework.
 </p>
-
-<p>
-Automation tests written in the Java framework were gradually
-migrated back to the stable platform.
-</p>
-
-<h2>An Unexpected Discovery</h2>
-
-<p>
-During the migration process, several legacy automation scripts
-were discovered to be bypassing important validation points.
-</p>
-
-<p>
-Although these tests were passing, they were not validating the
-correct business behavior, which created a risk of false confidence
-in automation results.
-</p>
-
-<h2>Improvements</h2>
-
-<ul>
-
-<li>Refactored automation scripts to enforce proper validation.</li>
-
-<li>Introduced automation coding standards.</li>
-
-<li>Improved test reliability and regression stability.</li>
-
-</ul>
 
 <h2>Lessons Learned</h2>
 
 <ul>
-
-<li>Technology trends should not override system stability.</li>
-
-<li>A mature framework with good architecture is often more valuable than a new stack.</li>
-
-<li>Automation reliability is critical to maintaining trust in test results.</li>
-
+<li>A mature framework architecture is often more valuable than a newer tech stack.</li>
+<li>Automation must increase confidence, not create false confidence.</li>
+<li>Stability is more important than trends.</li>
 </ul>
 
 </body>
+
 </html>
