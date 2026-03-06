@@ -104,41 +104,23 @@ Notes about automation testing, frameworks, and lessons learned from real projec
 
 <div class="cards">
 
+{% for post in site.case-studies %}
+
 <div class="card">
+
 <h3>
-<a href="case-studies/framework-migration">
-When an Automation Framework Migration Goes Wrong
+<a href="{{ post.url }}">
+{{ post.title }}
 </a>
 </h3>
 
 <p>
-Lessons learned from consolidating automation frameworks in an enterprise system.
+{{ post.excerpt }}
 </p>
+
 </div>
 
-<div class="card">
-<h3>
-<a href="case-studies/scaling-regression">
-Scaling Regression Testing for Enterprise Systems
-</a>
-</h3>
-
-<p>
-How regression automation evolved from hundreds to thousands of automated tests.
-</p>
-</div>
-
-<div class="card">
-<h3>
-<a href="case-studies/automation-false-confidence">
-The Hidden Risk of Test Automation
-</a>
-</h3>
-
-<p>
-Why passing tests do not always mean a system is actually working.
-</p>
-</div>
+{% endfor %}
 
 </div>
 
@@ -149,4 +131,5 @@ Engineering Notes · nhidinh.github.io
 </div>
 
 </body>
+
 </html>
