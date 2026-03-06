@@ -1,51 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Nhi Dinh | Automation Engineering Notes</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+<h2>Automation Architecture</h2>
 
-<body>
+<pre class="mermaid">
+graph TD
 
-<h1>Nhi Dinh</h1>
-<h2>Automation Platform Engineer</h2>
+A[Test Frameworks]
+A --> B[C# Selenium Framework]
+A --> C[Robot Framework + Playwright]
 
-<p>
-Designing scalable automation frameworks and enterprise regression systems.
-</p>
+B --> D[Test Runners]
+C --> D
 
-<h3>Case Studies</h3>
+D --> E[Jenkins Execution]
 
-<ul>
-<li>
-<a href="case-studies/framework-migration.html">
-When an Automation Framework Migration Goes Wrong
-</a>
-</li>
+E --> F[Test Results Aggregation]
 
-<li>
-<a href="case-studies/scaling-regression.html">
-Scaling Regression Testing for an Enterprise Billing System
-</a>
-</li>
+F --> G[Internal Dashboard]
 
-<li>
-<a href="case-studies/automation-reliability.html">
-The Hidden Risk of Test Automation: False Confidence
-</a>
-</li>
+G --> H[Regression Monitoring]
+</pre>
 
-</ul>
-
-<h3>Architecture</h3>
-
-<ul>
-<li>
-<a href="architecture/automation-platform.html">
-Automation Platform Architecture
-</a>
-</li>
-</ul>
-
-</body>
-</html>
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+mermaid.initialize({ startOnLoad: true });
+</script>
