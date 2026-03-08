@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 title: The Hidden Trade-Offs in Large Automation Suites Maintainance
 tags: [automation, testing, reliability]
 excerpt: Lessons learned from maintaining and stabilizing a large regression automation suite.
