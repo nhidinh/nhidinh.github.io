@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 title: When an Automation Framework Migration Goes Wrong
 ---
 
@@ -50,4 +50,5 @@ A mature automation architecture is often more valuable than adopting a newer te
 Automation should increase confidence in the system, not create a false sense of security.
 
 Finally, stability and maintainability are critical characteristics of long-lived automation platforms.
+
 
