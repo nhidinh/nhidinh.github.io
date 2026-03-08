@@ -1,12 +1,11 @@
 ---
 layout: posts
-title: The Hidden Trade-Offs in Large Automation Suites Maintainance
-tags: [automation, testing, reliability]
-excerpt: Lessons learned from maintaining and stabilizing a large regression automation suite.
+title: "The Hidden Trade-Offs in Large Automation Suites Maintenance"
+category: Engineering Decisions
+tags: [automation, reliability, test-data]
+excerpt: Trade-offs between execution speed and reliability when maintaining large automation suites.
+order: 6
 ---
-
-## Introduction
-
 When automation suites are small, maintaining them usually feels manageable.  
 A few test scripts fail occasionally, some tests need refactoring, and the framework evolves gradually.
 
