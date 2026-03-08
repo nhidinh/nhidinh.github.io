@@ -1,6 +1,10 @@
 ---
 layout: posts
-title: Automation Is a System, Not a Script
+title: "Automation Is a System, Not a Script"
+category: Automation Systems
+tags: [automation, systems, testing]
+excerpt: Why reliable automation requires thinking in systems rather than individual test scripts.
+order: 1
 ---
 
 In many teams, automation begins with a simple goal: writing scripts to verify system behaviour.
