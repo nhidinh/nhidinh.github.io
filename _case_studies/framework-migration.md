@@ -1,6 +1,10 @@
 ---
 layout: posts
-title: When an Automation Framework Migration Goes Wrong
+title: "When an Automation Framework Migration Goes Wrong"
+category: Engineering Decisions
+tags: [automation, framework, migration]
+excerpt: Lessons learned from migrating automation frameworks and the unexpected challenges that followed.
+order: 3
 ---
 
 Automation frameworks evolve slowly. Unlike application code, automation systems tend to live for many years and accumulate thousands of tests over time.
@@ -50,5 +54,6 @@ A mature automation architecture is often more valuable than adopting a newer te
 Automation should increase confidence in the system, not create a false sense of security.
 
 Finally, stability and maintainability are critical characteristics of long-lived automation platforms.
+
 
 
