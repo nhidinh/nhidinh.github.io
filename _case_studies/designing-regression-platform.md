@@ -1,6 +1,10 @@
 ---
 layout: posts
-title: Designing a Regression Platform for Large Systems
+title: "Designing a Regression Platform for Large Systems"
+category: Automation Architecture
+tags: [automation, regression, architecture]
+excerpt: Lessons from designing a regression platform with runners, orchestration, monitoring, and dashboards.
+order: 2
 ---
 
 Automation frameworks often start as small collections of test scripts.  
@@ -70,4 +74,5 @@ Building a large regression system requires thinking beyond individual test case
 Execution infrastructure, monitoring, and observability are equally important parts of the automation ecosystem.
 
 Automation becomes significantly more valuable when it is treated not only as a set of tests, but as a platform that supports the long-term evolution of the system.
+
 
