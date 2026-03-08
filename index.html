@@ -1,6 +1,5 @@
 ---
 ---
-
 <!DOCTYPE html>
 <html>
 
@@ -9,90 +8,106 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Nhi Dinh</title>
+<title>Automation Engineering Notes</title>
 
 <style>
 
 body{
 font-family:system-ui, Arial;
-margin:0;
+max-width:900px;
+margin:auto;
+padding:40px;
+line-height:1.7;
 color:#222;
 background:white;
 }
 
-nav{
-border-bottom:1px solid #eee;
-padding:15px 40px;
+/* HERO */
+
+.hero{
+margin-bottom:60px;
 }
 
-nav a{
-margin-right:20px;
+.hero h1{
+margin-bottom:10px;
+font-size:32px;
+}
+
+.tagline{
+color:#555;
+margin-bottom:20px;
+max-width:650px;
+}
+
+/* FEATURED */
+
+.featured{
+border:1px solid #e5e7eb;
+border-radius:8px;
+padding:24px;
+margin-bottom:50px;
+background:#fafafa;
+}
+
+.featured-title{
+font-size:14px;
+color:#666;
+margin-bottom:10px;
+}
+
+.featured a{
+font-size:22px;
+font-weight:600;
 text-decoration:none;
-color:#333;
-font-weight:500;
-}
-
-nav a:hover{
 color:#0366d6;
 }
 
-.container{
-max-width:900px;
-margin:auto;
-padding:40px;
+.featured a:hover{
+text-decoration:underline;
 }
 
-h1{
-font-size:36px;
-margin-bottom:5px;
+.featured p{
+margin-top:10px;
+color:#555;
 }
 
-.subtitle{
-color:#666;
+/* SECTION */
+
+.section-title{
 margin-bottom:20px;
 }
 
-.intro{
-max-width:700px;
-margin-bottom:30px;
-}
-
-.contact{
-margin-top:10px;
-font-size:14px;
-}
-
-.contact a{
-color:#0366d6;
-text-decoration:none;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
-}
+/* CARDS */
 
 .card{
-border:1px solid #e6e6e6;
-border-radius:8px;
+border:1px solid #e5e7eb;
+border-radius:6px;
 padding:20px;
-transition:all 0.2s;
-}
-
-.card:hover{
-background:#fafafa;
+margin-bottom:20px;
 }
 
 .card a{
 text-decoration:none;
 color:#0366d6;
+font-weight:600;
+font-size:18px;
 }
+
+.card a:hover{
+text-decoration:underline;
+}
+
+.card p{
+margin-top:8px;
+color:#555;
+}
+
+/* FOOTER */
 
 footer{
 margin-top:60px;
-color:#777;
 font-size:14px;
+color:#666;
 }
 
 </style>
@@ -101,70 +116,70 @@ font-size:14px;
 
 <body>
 
-<nav>
-<a href="/">Home</a>
-<a href="#cases">Case Studies</a>
-</nav>
+<!-- HERO -->
 
-<div class="container">
+<div class="hero">
 
-<h1>Nhi Dinh</h1>
+<h1>Automation Engineering Notes</h1>
 
-<p class="subtitle">
-Automation frameworks and regression systems
-</p>
-
-<div class="intro">
-
-<p>
-This site contains notes and case studies about building and maintaining
-automation systems for large software platforms.
+<p class="tagline">
+Notes and case studies on automation frameworks, regression testing systems, and building reliable automation platforms.
 </p>
 
 <p>
-The articles focus on topics such as automation reliability, regression
-testing at scale, and the evolution of automation frameworks over time.
+Contact: 
+<a href="https://linkedin.com/in/nhidinhyen">LinkedIn</a>
 </p>
 
-<div class="contact">
-LinkedIn:
-<a href="https://linkedin.com/in/nhidinhyen">
-linkedin.com/in/nhidinhyen
+</div>
+
+<!-- FEATURED ARTICLE -->
+
+{% assign featured = site.case-studies | where: "title", "From Stability to Evolution: Why We Built a New Automation Framework" | first %}
+
+<div class="featured">
+
+<div class="featured-title">Featured Article</div>
+
+<a href="{{ featured.url }}">
+{{ featured.title }}
 </a>
-</div>
+
+<p>
+{{ featured.excerpt | strip_html | truncate: 160 }}
+</p>
 
 </div>
 
-<h2 id="cases">Case Studies</h2>
+<!-- CASE STUDIES -->
 
-<div class="cards">
+<h2 class="section-title">Case Studies</h2>
 
-{% for post in site.case-studies %}
+{% assign sorted = site.case-studies | sort: "order" %}
+
+{% for post in sorted %}
 
 <div class="card">
 
-<h3>
 <a href="{{ post.url }}">
 {{ post.title }}
 </a>
-</h3>
 
 <p>
-{{ post.excerpt }}
+{{ post.excerpt | strip_html | truncate: 140 }}
 </p>
 
 </div>
 
 {% endfor %}
 
-</div>
-
 <footer>
-Notes · nhidinh.github.io
+
+<p>
+Automation engineering case studies and technical notes.
+</p>
+
 </footer>
 
-</div>
-
 </body>
-
 </html>
