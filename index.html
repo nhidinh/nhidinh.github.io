@@ -25,18 +25,26 @@ color:#222;
 /* PROFILE HEADER */
 
 .profile{
-margin-bottom:25px;
+margin-bottom:30px;
+}
+
+.name{
+margin:0;
+font-size:26px;
+}
+
+.linkedin{
+display:inline-flex;
+align-items:center;
+gap:6px;
+margin-top:6px;
 font-size:14px;
-color:#444;
-}
-
-.profile a{
 text-decoration:none;
-color:#0366d6;
-margin-left:10px;
+color:#0a66c2;
+font-weight:500;
 }
 
-.profile a:hover{
+.linkedin:hover{
 text-decoration:underline;
 }
 
@@ -151,11 +159,21 @@ grid-template-columns:1fr;
 
 /* FOOTER */
 
-footer{
-margin-top:60px;
+.site-footer{
+margin-top:70px;
+max-width:720px;
+}
+
+.footer-note{
+margin-top:20px;
 font-size:14px;
+}
+
+.disclaimer{
+font-size:13px;
 color:#666;
-max-width:750px;
+font-style:italic;
+margin-top:6px;
 }
 
 </style>
@@ -168,9 +186,32 @@ max-width:750px;
 
 <div class="profile">
 
-<strong>Nhi Dinh</strong>
+<h2 class="name">Nhi Dinh</h2>
 
-<a href="https://linkedin.com/in/nhidinhyen">LinkedIn</a>
+<a class="linkedin" href="https://linkedin.com/in/nhidinhyen">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+<path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 
+0 16 .513 16 1.146v13.708c0 .633-.526 
+1.146-1.175 1.146H1.175C.526 16 0 
+15.487 0 14.854V1.146zm4.943 
+12.248V6.169H2.542v7.225h2.401zM3.743 
+5.18c.837 0 1.358-.554 
+1.358-1.248-.015-.709-.521-1.248-1.342-1.248C2.937 
+2.684 2.4 3.223 2.4 
+3.932c0 .694.521 1.248 1.327 
+1.248h.016zm4.908 
+8.214h2.4V9.359c0-.216.016-.432.08-.586.174-.431.57-.878 
+1.234-.878.871 0 1.22.662 
+1.22 1.634v3.865h2.4V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 
+0-1.845.7-2.165 1.193v.025h-.016a5.54 
+5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 
+0 7.225 0 7.225z"/>
+</svg>
+
+<span>LinkedIn</span>
+
+</a>
 
 </div>
 
@@ -204,7 +245,7 @@ Case studies and technical notes on automation frameworks, regression testing sy
 
 {% endif %}
 
-<!-- HIGHLIGHTED ARTICLES -->
+<!-- HIGHLIGHTED -->
 
 <h2>Highlighted</h2>
 
@@ -250,19 +291,16 @@ Case studies and technical notes on automation frameworks, regression testing sy
 
 <!-- FOOTER -->
 
-<footer>
+<footer class="site-footer">
 
-<p>
+<hr>
+
+<p class="footer-note">
 My case studies and technical reflections.
 </p>
 
-<p>
-The content on this site reflects my personal experience and technical perspectives.
-Some examples are simplified or generalized and may not reflect internal implementations.
-</p>
-
-<p>
-The views expressed here do not represent those of my employer or any organization I have worked with.
+<p class="disclaimer">
+Opinions are my own. Examples may be simplified and do not represent internal implementations.
 </p>
 
 </footer>
