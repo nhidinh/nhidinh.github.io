@@ -1,6 +1,10 @@
 ---
 layout: posts
-title: Scaling Regression Testing for Enterprise Systems
+title: "Scaling Regression Testing for Enterprise Systems"
+category: Automation Systems
+tags: [automation, regression, scaling]
+excerpt: Strategies for scaling regression testing when automation suites grow to thousands of tests.
+order: 5
 ---
 
 Large enterprise systems often rely heavily on regression testing to maintain stability across releases. Over time, however, regression suites can grow significantly in size and complexity.
@@ -40,4 +44,5 @@ With improved stability and parallel execution, the regression system became a r
 Automation began to play a larger role in validating system changes, particularly after major technology upgrades or infrastructure changes.
 
 Rather than simply increasing the number of tests, the focus shifted toward building a **stable and scalable regression platform** that could support long-term system evolution.
+
 
