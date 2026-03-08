@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 title: Scaling Regression Testing for Enterprise Systems
 ---
 
@@ -40,3 +40,4 @@ With improved stability and parallel execution, the regression system became a r
 Automation began to play a larger role in validating system changes, particularly after major technology upgrades or infrastructure changes.
 
 Rather than simply increasing the number of tests, the focus shifted toward building a **stable and scalable regression platform** that could support long-term system evolution.
+
