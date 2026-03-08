@@ -11,24 +11,26 @@
 
 <style>
 
+/* BASE */
+
 body{
 font-family:system-ui, Arial;
 margin:0;
 color:#222;
 }
 
-/* LAYOUT */
+/* GRID LAYOUT */
 
 .container{
-display:flex;
-max-width:1200px;
+display:grid;
+grid-template-columns:260px 1fr 220px;
+max-width:1400px;
 margin:auto;
 }
 
-/* SIDEBAR */
+/* LEFT SIDEBAR */
 
 .sidebar{
-width:270px;
 border-right:1px solid #e5e7eb;
 height:100vh;
 position:sticky;
@@ -39,13 +41,13 @@ background:#fafafa;
 }
 
 .sidebar-title{
-font-size:20px;
+font-size:18px;
 font-weight:600;
 margin-bottom:4px;
 }
 
 .sidebar-sub{
-font-size:13px;
+font-size:12px;
 color:#666;
 margin-bottom:25px;
 }
@@ -67,34 +69,36 @@ text-decoration:none;
 font-size:14px;
 color:#0366d6;
 border-radius:5px;
-transition:all .15s ease;
 }
 
 .sidebar a:hover{
 background:#eef2ff;
 }
 
-/* ACTIVE */
-
 .sidebar a.active{
 background:#e0e7ff;
 font-weight:600;
 }
 
-/* CONTENT */
+/* MAIN CONTENT */
 
 .content{
-flex:1;
 padding:40px;
-max-width:750px;
+max-width:720px;
 }
 
 h1{
 margin-top:0;
+font-size:34px;
+line-height:1.25;
 }
 
 h2{
-margin-top:40px;
+margin-top:56px;
+}
+
+h3{
+margin-top:32px;
 }
 
 p{
@@ -118,26 +122,41 @@ border-radius:4px;
 color:#555;
 }
 
-/* TOC */
+/* RIGHT TOC */
 
 .toc{
-border:1px solid #e5e7eb;
-padding:16px;
-margin:30px 0;
-background:#fafafa;
+border-left:1px solid #e5e7eb;
+padding:30px 20px;
+font-size:13px;
+position:sticky;
+top:0;
+height:100vh;
+overflow-y:auto;
+}
+
+.toc-title{
+font-weight:600;
+margin-bottom:10px;
 }
 
 .toc ul{
-padding-left:18px;
+list-style:none;
+padding-left:0;
+}
+
+.toc li{
+margin:6px 0;
 }
 
 .toc a{
 text-decoration:none;
-color:#0366d6;
+color:#666;
+line-height:1.5;
 }
 
-.toc a:hover{
-text-decoration:underline;
+.toc a.active{
+color:#000;
+font-weight:600;
 }
 
 /* CODE */
@@ -159,12 +178,45 @@ pre code{
 background:none;
 }
 
+/* NEXT / PREVIOUS NAV */
+
+.post-nav{
+display:flex;
+justify-content:space-between;
+margin-top:60px;
+padding-top:20px;
+border-top:1px solid #e5e7eb;
+font-size:14px;
+}
+
+.post-nav a{
+text-decoration:none;
+color:#0366d6;
+max-width:45%;
+}
+
+.post-nav a:hover{
+text-decoration:underline;
+}
+
 /* MOBILE */
 
-@media (max-width:900px){
+@media (max-width:1100px){
 
 .container{
-flex-direction:column;
+grid-template-columns:220px 1fr;
+}
+
+.toc{
+display:none;
+}
+
+}
+
+@media (max-width:800px){
+
+.container{
+grid-template-columns:1fr;
 }
 
 .sidebar{
@@ -183,6 +235,8 @@ border-bottom:1px solid #e5e7eb;
 <body>
 
 <div class="container">
+
+<!-- LEFT SIDEBAR -->
 
 <div class="sidebar">
 
@@ -210,6 +264,8 @@ class="{% if page.url == post.url %}active{% endif %}">
 
 </div>
 
+<!-- MAIN CONTENT -->
+
 <div class="content">
 
 <h1>{{ page.title }}</h1>
@@ -222,18 +278,57 @@ class="{% if page.url == post.url %}active{% endif %}">
 </p>
 {% endif %}
 
-<div class="toc">
-<strong>Contents</strong>
-<ul id="toc-list"></ul>
+{{ content }}
+
+<!-- NEXT / PREVIOUS -->
+
+{% assign sorted = site.case_studies | sort: "order" %}
+
+{% for post in sorted %}
+{% if post.url == page.url %}
+{% assign currentIndex = forloop.index0 %}
+{% endif %}
+{% endfor %}
+
+{% assign prevIndex = currentIndex | minus: 1 %}
+{% assign nextIndex = currentIndex | plus: 1 %}
+
+{% assign prevPost = sorted[prevIndex] %}
+{% assign nextPost = sorted[nextIndex] %}
+
+<div class="post-nav">
+
+{% if prevPost %}
+<a href="{{ prevPost.url }}">
+← {{ prevPost.title }}
+</a>
+{% endif %}
+
+{% if nextPost %}
+<a href="{{ nextPost.url }}">
+{{ nextPost.title }} →
+</a>
+{% endif %}
+
 </div>
 
-{{ content }}
+</div>
+
+<!-- RIGHT TOC -->
+
+<div class="toc">
+
+<div class="toc-title">On this page</div>
+
+<ul id="toc-list"></ul>
 
 </div>
 
 </div>
 
 <script>
+
+/* BUILD TOC */
 
 const headings = document.querySelectorAll("h2");
 const tocList = document.getElementById("toc-list");
@@ -251,6 +346,36 @@ a.textContent = heading.textContent;
 
 li.appendChild(a);
 tocList.appendChild(li);
+
+});
+
+/* ACTIVE SECTION */
+
+const tocLinks = document.querySelectorAll(".toc a");
+
+window.addEventListener("scroll", () => {
+
+let current = "";
+
+headings.forEach((heading) => {
+
+const sectionTop = heading.offsetTop - 120;
+
+if (scrollY >= sectionTop) {
+current = heading.id;
+}
+
+});
+
+tocLinks.forEach((link) => {
+
+link.classList.remove("active");
+
+if (link.getAttribute("href") === "#" + current) {
+link.classList.add("active");
+}
+
+});
 
 });
 
