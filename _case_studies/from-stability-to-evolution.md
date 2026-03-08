@@ -1,7 +1,6 @@
 ---
-layout: post
+layout: posts
 title: "From Stability to Evolution: Why We Built a New Automation Framework"
-order: 9
 ---
 Automation frameworks rarely remain unchanged over the lifetime of a software system.  
 As products evolve and testing practices mature, teams often revisit earlier technical decisions and explore new approaches to building and maintaining their automation infrastructure.
@@ -135,3 +134,4 @@ The transition to a new automation framework is rarely a simple technical upgrad
 Automation frameworks will change over time, but the principles behind effective automation remain consistent: reliable execution, sustainable maintenance, and clear feedback about system behaviour.
 
 Ultimately, the success of an automation system is not determined by the framework it uses, but by how well it supports long-term testing practices and helps teams maintain confidence in the quality of their software.
+
