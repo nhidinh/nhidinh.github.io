@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 title: Designing a Regression Platform for Large Systems
 ---
 
@@ -70,3 +70,4 @@ Building a large regression system requires thinking beyond individual test case
 Execution infrastructure, monitoring, and observability are equally important parts of the automation ecosystem.
 
 Automation becomes significantly more valuable when it is treated not only as a set of tests, but as a platform that supports the long-term evolution of the system.
+
