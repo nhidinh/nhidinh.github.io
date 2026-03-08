@@ -104,7 +104,12 @@ At this point, automation systems face a common trade-off:
 
 There is rarely a perfect solution. Teams must choose which property is more important for their automation system.
 
+<div style="border-left:4px solid #3b82f6;padding:12px 16px;margin:20px 0;background:#f8fafc">
+
 In our case, reliability was considered more valuable than execution speed because unreliable automation results create much larger operational costs during failure analysis.
+
+</div>
+
 ---
 ## Why Teams Often Choose the Wrong Trade-Off
 
@@ -123,8 +128,11 @@ At that point, the cost of instability becomes much higher than the cost of slow
 In other words, the system begins to optimize for execution speed while unintentionally increasing the operational cost of maintaining the automation suite.
 
 In practice, reliable automation systems often require accepting slower execution in exchange for more predictable results.
+<div style="border-left:4px solid #3b82f6;padding:12px 16px;margin:20px 0;background:#f8fafc">
 
 The cost of running tests is usually smaller than the cost of constantly debugging unreliable test results.
+
+</div>
 ---
 
 ## Other Factors That Increase Maintenance Complexity
