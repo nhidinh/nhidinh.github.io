@@ -1,7 +1,7 @@
 collections:
   case-studies:
     output: true
-    permalink: /case-studies/:name/
+    permalink: /case_studies/:name/
 
 markdown: kramdown
 highlighter: rouge
