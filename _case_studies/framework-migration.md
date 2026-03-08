@@ -11,7 +11,7 @@ Several years ago our team attempted to migrate an established automation framew
 
 The system was a large enterprise billing platform with complex business logic and a significant number of regression scenarios.
 
-Automation testing relied on a mature framework built using **C#, Selenium, and NUnit**. The framework had been maintained for more than a decade and supported a large regression suite validating critical business flows.
+Automation testing relied on a mature framework built using an old and stable technical framework. The framework had been maintained for more than a decade and supported a large regression suite validating critical business flows.
 
 At one point the team initiated an effort to migrate the automation framework to **Java + Selenium + TestNG**, with the goal of aligning the automation stack with a broader open-source ecosystem.
 
@@ -50,3 +50,4 @@ A mature automation architecture is often more valuable than adopting a newer te
 Automation should increase confidence in the system, not create a false sense of security.
 
 Finally, stability and maintainability are critical characteristics of long-lived automation platforms.
+
