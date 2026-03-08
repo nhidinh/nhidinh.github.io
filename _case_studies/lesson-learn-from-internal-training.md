@@ -1,9 +1,10 @@
 ---
 layout: posts
 title: "From Manual Testing to Automation: Lessons from an Internal Training Program"
-order: 10
+category: Testing Culture
 tags: [automation, training, testing]
 excerpt: Lessons learned from organizing an internal automation training program for manual testers.
+order: 8
 ---
 
 ## Introduction
