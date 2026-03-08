@@ -1,6 +1,6 @@
 ---
 layout: post
-title: From Stability to Evolution: Why We Built a New Automation Framework
+title: "From Stability to Evolution: Why We Built a New Automation Framework"
 order: 9
 ---
 
