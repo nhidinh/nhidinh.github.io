@@ -1,5 +1,6 @@
 ---
 ---
+
 <!DOCTYPE html>
 <html>
 
@@ -44,19 +45,21 @@ max-width:650px;
 .featured{
 border:1px solid #e5e7eb;
 border-radius:8px;
-padding:24px;
-margin-bottom:50px;
+padding:26px;
+margin-bottom:60px;
 background:#fafafa;
 }
 
 .featured-title{
-font-size:14px;
+font-size:13px;
+letter-spacing:.04em;
+text-transform:uppercase;
 color:#666;
-margin-bottom:10px;
+margin-bottom:12px;
 }
 
 .featured a{
-font-size:22px;
+font-size:24px;
 font-weight:600;
 text-decoration:none;
 color:#0366d6;
@@ -67,8 +70,9 @@ text-decoration:underline;
 }
 
 .featured p{
-margin-top:10px;
+margin-top:12px;
 color:#555;
+max-width:700px;
 }
 
 /* SECTION */
@@ -83,7 +87,12 @@ margin-bottom:20px;
 border:1px solid #e5e7eb;
 border-radius:6px;
 padding:20px;
-margin-bottom:20px;
+margin-bottom:18px;
+transition:.15s ease;
+}
+
+.card:hover{
+border-color:#d1d5db;
 }
 
 .card a{
@@ -105,7 +114,7 @@ color:#555;
 /* FOOTER */
 
 footer{
-margin-top:60px;
+margin-top:70px;
 font-size:14px;
 color:#666;
 }
@@ -123,7 +132,7 @@ color:#666;
 <h1>Automation Engineering Notes</h1>
 
 <p class="tagline">
-Notes and case studies on automation frameworks, regression testing systems, and building reliable automation platforms.
+Case studies and technical notes on automation frameworks, regression testing systems, and building reliable automation platforms.
 </p>
 
 <p>
@@ -135,7 +144,9 @@ Contact:
 
 <!-- FEATURED ARTICLE -->
 
-{% assign featured = site.case-studies | where: "title", "From Stability to Evolution: Why We Built a New Automation Framework" | first %}
+{% assign featured = site.case_studies | where: "title", "From Stability to Evolution: Why We Built a New Automation Framework" | first %}
+
+{% if featured %}
 
 <div class="featured">
 
@@ -151,11 +162,13 @@ Contact:
 
 </div>
 
+{% endif %}
+
 <!-- CASE STUDIES -->
 
 <h2 class="section-title">Case Studies</h2>
 
-{% assign sorted = site.case-studies | sort: "order" %}
+{% assign sorted = site.case_studies | sort: "order" %}
 
 {% for post in sorted %}
 
@@ -176,7 +189,7 @@ Contact:
 <footer>
 
 <p>
-Automation engineering case studies and technical notes.
+Automation engineering case studies and technical reflections.
 </p>
 
 </footer>
