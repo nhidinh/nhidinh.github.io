@@ -1,13 +1,11 @@
 ---
 layout: posts
 title: "Why Automation Test Suites Become Unreliable Over Time"
-order: 8
+category: Engineering Decisions
 tags: [automation, reliability, testing]
-excerpt: Lessons learned from stabilizing a large automation regression suite.
+excerpt: How automation suites gradually lose reliability as systems grow and hidden dependencies accumulate.
+order: 7
 ---
-
-## Introduction
-
 Automation reliability is often discussed as a tooling problem.
 
 Teams debate which frameworks to use, which libraries are more stable, or how to design automation architectures.
