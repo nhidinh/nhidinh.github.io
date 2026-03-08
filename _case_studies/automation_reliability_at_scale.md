@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 title: "Why Automation Test Suites Become Unreliable Over Time"
 order: 8
 tags: [automation, reliability, testing]
