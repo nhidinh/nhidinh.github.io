@@ -3,9 +3,6 @@ layout: post
 title: "From Stability to Evolution: Why We Built a New Automation Framework"
 order: 9
 ---
-
-## Introduction
-
 Automation frameworks rarely remain unchanged over the lifetime of a software system.  
 As products evolve and testing practices mature, teams often revisit earlier technical decisions and explore new approaches to building and maintaining their automation infrastructure.
 
