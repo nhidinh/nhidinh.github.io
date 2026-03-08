@@ -15,44 +15,73 @@
 
 body{
 font-family:system-ui, Arial;
-max-width:900px;
+max-width:1000px;
 margin:auto;
 padding:40px;
 line-height:1.7;
 color:#222;
 }
 
-.header{
-margin-bottom:60px;
+/* PROFILE HEADER */
+
+.profile{
+margin-bottom:30px;
 }
 
-.site-title{
-font-size:32px;
-font-weight:600;
-margin-bottom:6px;
+.name{
+margin:0;
+font-size:26px;
 }
 
-.site-sub{
-color:#666;
-font-size:15px;
+.linkedin{
+display:inline-flex;
+align-items:center;
+gap:6px;
+margin-top:6px;
+font-size:14px;
+text-decoration:none;
+color:#0a66c2;
+font-weight:500;
 }
+
+.linkedin:hover{
+text-decoration:underline;
+}
+
+/* HERO */
+
+.hero{
+margin-bottom:30px;
+}
+
+.hero h1{
+margin-bottom:8px;
+}
+
+.tagline{
+color:#555;
+max-width:650px;
+}
+
+/* FEATURED */
 
 .featured{
 border:1px solid #e5e7eb;
-padding:20px;
 border-radius:8px;
-margin-bottom:40px;
+padding:24px;
+margin:40px 0;
 background:#fafafa;
 }
 
 .featured-title{
-font-size:14px;
+font-size:12px;
+text-transform:uppercase;
 color:#666;
-margin-bottom:6px;
+margin-bottom:8px;
 }
 
 .featured a{
-font-size:20px;
+font-size:22px;
 font-weight:600;
 text-decoration:none;
 color:#0366d6;
@@ -62,41 +91,89 @@ color:#0366d6;
 text-decoration:underline;
 }
 
-.category{
-margin-top:40px;
+/* HIGHLIGHTED */
+
+.highlight-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+margin:30px 0;
 }
 
-.category h2{
-font-size:18px;
-margin-bottom:10px;
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+margin-top:20px;
 }
 
-.article{
-margin:14px 0;
+/* CARD */
+
+.card{
+border:1px solid #e5e7eb;
+border-radius:6px;
+padding:18px;
 }
 
-.article a{
+.card a{
 text-decoration:none;
 color:#0366d6;
-font-weight:500;
+font-weight:600;
+font-size:17px;
 }
 
-.article a:hover{
+.card a:hover{
 text-decoration:underline;
 }
 
-.excerpt{
-color:#666;
+.card p{
+margin-top:8px;
+color:#555;
 font-size:14px;
-margin-top:4px;
+line-height:1.5;
 }
 
-footer{
-margin-top:60px;
-padding-top:20px;
-border-top:1px solid #e5e7eb;
+/* RESPONSIVE */
+
+@media (max-width:900px){
+
+.grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.highlight-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+@media (max-width:600px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+}
+
+/* FOOTER */
+
+.site-footer{
+margin-top:70px;
+max-width:720px;
+}
+
+.footer-note{
+margin-top:20px;
 font-size:14px;
+}
+
+.disclaimer{
+font-size:13px;
 color:#666;
+font-style:italic;
+margin-top:6px;
 }
 
 </style>
@@ -105,53 +182,84 @@ color:#666;
 
 <body>
 
-<div class="header">
+<!-- PROFILE HEADER -->
 
-<div class="site-title">Nhi Dinh</div>
+<div class="profile">
 
-<div class="site-sub">
-Automation Engineering Notes — case studies and technical reflections on building and maintaining automation systems.
+<h2 class="name">Nhi Dinh</h2>
+
+<a class="linkedin" href="https://linkedin.com/in/nhidinhyen">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+<path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 
+0 16 .513 16 1.146v13.708c0 .633-.526 
+1.146-1.175 1.146H1.175C.526 16 0 
+15.487 0 14.854V1.146zm4.943 
+12.248V6.169H2.542v7.225h2.401zM3.743 
+5.18c.837 0 1.358-.554 
+1.358-1.248-.015-.709-.521-1.248-1.342-1.248C2.937 
+2.684 2.4 3.223 2.4 
+3.932c0 .694.521 1.248 1.327 
+1.248h.016zm4.908 
+8.214h2.4V9.359c0-.216.016-.432.08-.586.174-.431.57-.878 
+1.234-.878.871 0 1.22.662 
+1.22 1.634v3.865h2.4V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 
+0-1.845.7-2.165 1.193v.025h-.016a5.54 
+5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 
+0 7.225 0 7.225z"/>
+</svg>
+
+<span>LinkedIn</span>
+
+</a>
+
 </div>
 
+<!-- HERO -->
+
+<div class="hero">
+
+<h1>Automation Engineering Notes</h1>
+
+<p class="tagline">
+Case studies and technical notes on automation frameworks, regression testing systems, and building reliable automation platforms.
+</p>
+
 </div>
 
-{% assign featured = site.case_studies | sort: "order" | last %}
+<!-- FEATURED ARTICLE -->
+
+{% assign featured = site.case_studies | where: "title", "From Stability to Evolution: Why We Built a New Automation Framework" | first %}
+
+{% if featured %}
 
 <div class="featured">
 
-<div class="featured-title">Featured</div>
+<div class="featured-title">Featured Article</div>
 
-<a href="{{ featured.url }}">
-{{ featured.title }}
-</a>
+<a href="{{ featured.url }}">{{ featured.title }}</a>
 
-<p class="excerpt">
-{{ featured.excerpt }}
-</p>
+<p>{{ featured.excerpt | strip_html | truncate:160 }}</p>
 
 </div>
 
-{% assign categories = site.case_studies | group_by: "category" %}
+{% endif %}
 
-{% for category in categories %}
+<!-- HIGHLIGHTED -->
 
-<div class="category">
+<h2>Highlighted</h2>
 
-<h2>{{ category.name }}</h2>
+<div class="highlight-grid">
 
-{% assign posts = category.items | sort: "order" %}
+{% assign highlights = site.case_studies | sort: "order" | slice: 0,2 %}
 
-{% for post in posts %}
+{% for post in highlights %}
 
-<div class="article">
+<div class="card">
 
-<a href="{{ post.url }}">
-{{ post.title }}
-</a>
+<a href="{{ post.url }}">{{ post.title }}</a>
 
-<div class="excerpt">
-{{ post.excerpt }}
-</div>
+<p>{{ post.excerpt | strip_html | truncate:140 }}</p>
 
 </div>
 
@@ -159,23 +267,43 @@ Automation Engineering Notes — case studies and technical reflections on build
 
 </div>
 
+<!-- ALL ARTICLES -->
+
+<h2>All Case Studies</h2>
+
+{% assign sorted = site.case_studies | sort: "order" %}
+
+<div class="grid">
+
+{% for post in sorted %}
+
+<div class="card">
+
+<a href="{{ post.url }}">{{ post.title }}</a>
+
+<p>{{ post.excerpt | strip_html | truncate:120 }}</p>
+
+</div>
+
 {% endfor %}
 
-<footer>
+</div>
 
-<p>
+<!-- FOOTER -->
+
+<footer class="site-footer">
+
+<hr>
+
+<p class="footer-note">
 My case studies and technical reflections.
 </p>
 
-<p>
-<em>
-The content reflects my personal experience and technical perspectives.  
-Examples may be simplified and do not represent internal implementations.
-</em>
+<p class="disclaimer">
+Opinions are my own. Examples may be simplified and do not represent internal implementations.
 </p>
 
 </footer>
 
 </body>
-
 </html>
