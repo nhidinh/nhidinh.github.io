@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 title: "From Manual Testing to Automation: Lessons from an Internal Training Program"
 order: 10
 tags: [automation, training, testing]
