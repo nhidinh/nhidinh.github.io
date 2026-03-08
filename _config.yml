@@ -2,3 +2,6 @@ collections:
   case-studies:
     output: true
     permalink: /case-studies/:name/
+
+markdown: kramdown
+highlighter: rouge
